@@ -31,7 +31,10 @@ jobs:
             | xargs -n1 basename \
             | cut -d'-' -f2 \
             | sort -u \
-            | tr '\n' ' ')
+            | xargs)
+
+# | paste -sd "," -) -> this will give "python,"
+# | tr '\n' ' ') -> was giving extra space "python "
 
           echo "App names: $APP_NAMES"
 
